@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+        <script>
+            mocha.setup('bdd');
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+        <script>
+            let assert = chai.assert;
+        </script>
+    </head>
+<body>
+    <style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+.calculator {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+.display {
+    width: 93%;
+    height: 50px;
+    font-size: 24px;
+    text-align: right;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #e9e9e9;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+.buttons .r{
+    background-color: #ff7b00;
+}
+.buttons .s{
+    background-color: #666462;
+}
+button {
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 50%;
+    background-color: #e9e9e9;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+    <div class="calculator">                                
+        <input type="text" class="display" id="display"  maxlength="18">
+        <div class="buttons">
+            <button class = "s" onclick="clearDisplay()">AC</button>
+            <button class = "s" onclick="raisePower('^2')">^2</button>
+            <button class = "s" onclick="calculatePrecentage('%')">%</button>
+            <button class = "r" onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button  class = "r" onclick="appendToDisplay('*')">х</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button  class = "r" onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button> 
+            <button onclick="appendToDisplay('3')">3</button>
+            <button  class = "r" onclick="appendToDisplay('+')">+</button>
+            <button class = "r" onclick="ebtvoumat('√')">√</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay(',')">,</button>
+            <button  class = "r" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+    <script src="1.js"></script>
+</script>
+<div id="mocha"></div>
+<script>
+    mocha.run();
+</script>
+</body>
+</html>
